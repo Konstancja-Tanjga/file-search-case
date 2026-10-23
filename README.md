@@ -2,12 +2,13 @@
 
 A design task, rebuilt after the reviewers' feedback. Client details are anonymized; all data is invented.
 
-**Open:** `index.html` (case study) · `before.html` (first answer) · `after.html` (second answer). All three work offline in a browser.
+**▶ Open the clickable case study: https://konstancja-tanjga.github.io/file-search-case/**
+Prototypes: [after feedback](https://konstancja-tanjga.github.io/file-search-case/after.html) · [before feedback](https://konstancja-tanjga.github.io/file-search-case/before.html)
 
 <details>
 <summary><b>Preview of the case study page</b> (click to expand)</summary>
 
-[![The case study page: summary, before, feedback, after, lessons](img/case-page.png)](index.html)
+[![The case study page: summary, before, feedback, after, lessons](img/case-page.png)](https://konstancja-tanjga.github.io/file-search-case/)
 
 </details>
 
