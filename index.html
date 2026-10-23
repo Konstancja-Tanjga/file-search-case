@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File search · before and after</title>
+<style>
+:root { --bg: #ffffff; --ink: #14181f; --muted: #5b6472; --line: #e3e6ea; --soft: #f5f6f8; --accent: #1f9d6b; --bad: #b4452f; --link: #0b63ce; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #12151a; --ink: #e9ecf0; --muted: #9aa3ae; --line: #2a3038; --soft: #1a1f26; --accent: #39c48c; --bad: #e08a74; --link: #7ab4ff; } }
+:root[data-theme="dark"] { --bg: #12151a; --ink: #e9ecf0; --muted: #9aa3ae; --line: #2a3038; --soft: #1a1f26; --accent: #39c48c; --bad: #e08a74; --link: #7ab4ff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 -apple-system, "Inter", "Helvetica Neue", Arial, sans-serif; }
+main { max-width: 920px; margin: 0 auto; padding: 48px 16px 80px; }
+.kicker { margin: 0; color: var(--muted); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+h1 { margin: 6px 0 12px; font-size: clamp(28px, 5vw, 40px); line-height: 1.15; letter-spacing: -.02em; }
+.lede { margin: 0 0 20px; font-size: 19px; color: var(--muted); max-width: 680px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+.links a { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--soft); color: var(--link); text-decoration: none; font-size: 14px; }
+.links a.primary { background: var(--accent); border-color: var(--accent); color: #06130d; font-weight: 600; }
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 0 0 48px; padding: 0; list-style: none; }
+.summary li { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); }
+.summary b { display: block; font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+h2 { margin: 56px 0 8px; font-size: 24px; letter-spacing: -.01em; }
+h2 small { color: var(--muted); font-weight: 400; font-size: 15px; margin-left: 6px; }
+p { margin: 8px 0; }
+figure { margin: 20px 0; }
+figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
+figcaption { margin-top: 8px; color: var(--muted); font-size: 14px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 16px 0; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
+td:first-child { color: var(--bad); width: 42%; }
+ol.lessons { padding-left: 20px; } ol.lessons li { margin: 8px 0; }
+.note { color: var(--muted); font-size: 14px; margin-top: 48px; border-top: 1px solid var(--line); padding-top: 16px; }
+a { color: var(--link); }
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">Case study · design task · 2026</p>
+  <h1>File search for a billion-file browser: before and after feedback</h1>
+  <p class="lede">I designed a search form, got it rejected for being too complex, and rebuilt it as one bar of conditions above the file list.</p>
+  <nav class="links" aria-label="Prototypes">
+    <a class="primary" href="after.html">Open the prototype after feedback</a>
+    <a href="before.html">Open the prototype before feedback</a>
+  </nav>
+
+  <ul class="summary">
+    <li><b>Brief</b>A simple, ergonomic form to search files by a few basic conditions, in a folder or in all storage. Flow ends at Run.</li>
+    <li><b>First answer</b>A full product around the form: side panel, three steps, live counts, AI assistant, saved searches, results.</li>
+    <li><b>Feedback</b>Too much around the search. A custom file extension was hard to find. The AI added no value.</li>
+    <li><b>Second answer</b>One bar: location, conditions as chips, any extension by typing it, Search.</li>
+  </ul>
+
+  <h2>Before <small>what I sent</small></h2>
+  <p>A side panel with three numbered steps, a count under every condition, an AI field, and the whole file browser around it.</p>
+  <figure><img src="img/before-1-filters.png" alt="Search panel with three steps, AI field, two conditions with counts, and a full file browser around it"><figcaption>The form competes with the tree, the panel header, the AI field and the counts.</figcaption></figure>
+  <figure><img src="img/before-2-results.png" alt="Search results with a notice, list and grid toggle, and the panel still open"><figcaption>Results, a notice and the panel at once: the search is no longer the focus.</figcaption></figure>
+
+  <h2>Feedback <small>from the reviewers, and what it changed</small></h2>
+  <table>
+    <thead><tr><th>Reviewers said</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td>Side elements drew more attention than the search</td><td>One bar above the list. No panel, steps, counts or results.</td></tr>
+      <tr><td>A custom extension was very hard to search</td><td>Type “.cram” and press Enter: “Type is .cram”. Any extension works.</td></tr>
+      <tr><td>The AI assistant felt bolted on</td><td>Removed. The brief asked to build with AI, not to add AI.</td></tr>
+      <tr><td>Location was shown twice and changed in the less visible place</td><td>One chip, first in the bar. It shows the location and changes it.</td></tr>
+      <tr><td>Research was too long; the prototype was hard to reach</td><td>This page, and one link to each prototype.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>After <small>the core task in the fewest steps</small></h2>
+  <figure><img src="img/after-1-brief-example.png" alt="One search bar with chips: In 2023-wgs, Type .pdf, Size over 100 MB, Not modified for 1 year, and a Search button"><figcaption>The brief’s example: three chips and Search. The chips read as one sentence.</figcaption></figure>
+  <div class="grid2">
+    <figure><img src="img/after-2-any-extension.png" alt="Typing .cram suggests Type is .cram"><figcaption>Type any extension; Enter adds it.</figcaption></figure>
+    <figure><img src="img/after-3-edit.png" alt="Small editor for the Type condition with extension suggestions"><figcaption>Click a chip to edit it; × removes it.</figcaption></figure>
+  </div>
+  <figure><img src="img/after-4-searching.png" alt="Searching all storage with a Cancel button"><figcaption>Search starts a searching state with Cancel. The flow ends here, as the brief asks.</figcaption></figure>
+
+  <h2>What I learned</h2>
+  <ol class="lessons">
+    <li><b>Restraint shows maturity.</b> Every extra weakened the proof that the user reaches the goal fast.</li>
+    <li><b>Limiting words are a ceiling.</b> “Simple” and “a few basic conditions” should have cut the scope on day one.</li>
+    <li><b>Solve the brief’s own example first,</b> then its nearest variant: any extension, not only PDF.</li>
+    <li><b>One fact, one place,</b> editable where it is shown.</li>
+    <li><b>With AI tools, my job is editing.</b> AI made adding cheap; I set a budget and cut.</li>
+    <li><b>Five minutes with one fresh person</b> would have caught the extension and location problems.</li>
+  </ol>
+
+  <p class="note">Client details are anonymized; file names and data are invented. Built on my design system Big Hat; prototypes built with Claude Code.</p>
+</main>
+</body>
+</html>
